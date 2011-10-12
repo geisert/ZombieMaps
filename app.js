@@ -147,10 +147,12 @@ var io = sio.listen(app);
 var sockets=[];
 var rooms={};
 io.sockets.on('connection',function(socket){
-   	sockets.push(socket.id);
+	console.log('connected');
    	socket.on('toRoom',function(json){
    		action=json.action;
    		delete json.action;
+   		json.z=socket.id;
+   		console.log(json);
     	io.sockets.emit(action,json);
    	});
    	socket.on('disconnect',function(){

@@ -1,6 +1,5 @@
 <head>
-		<link rel=StyleSheet href="./css/style.css" type="text/css"/>
-		<script type="text/javascript" src="./includes.js"></script>
+		<link rel=StyleSheet href="css/style.css" type="text/css"/>
 		<title>Zombie Maps</title>
 		<meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -8,11 +7,14 @@
     <script type="text/javascript" src="js/controls.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="js/canvas.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>	
+	<script type="text/javascript">
+    var socket=io.connect();</script>
+    <script type="text/javascript" src="http://www.html5canvastutorials.com/libraries/kinetic2d-v1.0.3.js"></script>
 </head>
-<body onload="include();">
+<body>
 	<div id="map_container"><div id="map_canvas"></div></div>
-	<div id="object_container"><canvas id="object_layer"></canvas></div>
+	<div id="object_container"><canvas id="object_layer" width='1000' height='400'></canvas></div>
 </body>

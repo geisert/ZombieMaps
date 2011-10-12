@@ -43,5 +43,6 @@ function keycontrols(){
     }
     	var setlocation = new google.maps.LatLng(y, x);
     	map.setCenter(setlocation);
+    	socket.emit('toRoom',{'x':setlocation.lng(),'y':setlocation.lat(),'action':'player'});
    }
 }

@@ -5,6 +5,7 @@
 	  var left=false;
 	  var down=false;
 	  var up=false;
+	  var players={};
       function initialize() {
         var myOptions = {
           zoom: 19,
@@ -29,5 +30,9 @@
         	map.setCenter(setlocation);
         });
         keycontrols();
+	    
+	    socket.on('player',function(json){
+	    	players[json.z]={'x':json.x,'y':json.y};
+    	});
       }
       google.maps.event.addDomListener(window, 'load', initialize);
