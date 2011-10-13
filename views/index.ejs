@@ -16,5 +16,9 @@
 </head>
 <body>
 	<div id="map_container"><div id="map_canvas"></div></div>
-	<div id="object_container"><canvas id="object_layer" width='1000' height='400'></canvas></div>
+	<div id="object_container"></div>
+	<script>
+	var canvasObj="<canvas id='object_layer' height='"+window.innerHeight+"' width='"+window.innerWidth+"'></canvas>";
+	$('#object_container').html(canvasObj);
+	</script>
 </body>

@@ -1,13 +1,15 @@
       var map;
-      var y=38.898590;
-      var x=-77.035971;
+      var y=38.89859;
+      var x=-77.03597;
 	  var right=false;
 	  var left=false;
 	  var down=false;
 	  var up=false;
 	  var players={};
       function initialize() {
-        var myOptions = {
+		canvasObj="<canvas id='object_layer' height='"+window.innerHeight+"' width='"+window.innerWidth+"'></canvas>"
+		$('#object_container').html(canvasObj)
+          var myOptions = {
           zoom: 19,
           center: new google.maps.LatLng(y, x),
     	  disableDefaultUI: true,
@@ -31,8 +33,5 @@
         });
         keycontrols();
 	    
-	    socket.on('player',function(json){
-	    	players[json.z]={'x':json.x,'y':json.y};
-    	});
       }
       google.maps.event.addDomListener(window, 'load', initialize);
