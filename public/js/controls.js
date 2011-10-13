@@ -2,6 +2,7 @@ function keycontrols(){
         $(document).keydown(function(e){
     if (e.keyCode == 37) { 
 		left=true;
+		alert(count);
     }
     if (e.keyCode == 38) { 
 		up=true;
